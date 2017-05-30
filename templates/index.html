@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>随机密码生成器</title>
+
+    <link rel="stylesheet" href="{{ static_url("css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ static_url("css/base.css") }}">
+
+
+</head>
+<body>
+    <div class="container">
+        <h3>随机密码生成器</h3>
+
+        <p>随意取用吧，不用再费脑想密码了，不过要注意哦，需要你在其他任何地方，比如 keepass 中存储你的密码哦</p>
+
+    <ul class="cur">
+        <li>{{ cur_passwd }}</li>
+    </ul>
+    <ol class="his">
+        {% for passwd in history%}
+            <li>{{ passwd }}
+        {% end %}
+    </ol>
+        <a class="btn btn-success" href="/" role="button">再来一个</a>
+
+        <p class="tips">本网站不记录生成的随机密码、不记录使用用户，仅在用户浏览器中存储最近生成的 10 个密码</p>
+        <p class="tips">使用 ?l=12 指定如 12 这样的数字，可以生成指定长度的密码</p>
+        <a href="https://github.com/leyle/randompasswd">本站源码</a>
+
+    </div>
+
+
+<script src="{{ static_url("js/jquery-1.11.3.min.js") }}"></script>
+<script scr="{{ static_url("js/bootstrap.min.js") }}"></script>
+</body>
+</html>
